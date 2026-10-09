@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&amp;family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#131313;color:#e5e2e1;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-container": "#93000a", "surface-dim": "#131313", "text-muted": "#A8A8A8", "text-primary": "#FFFFFF", "surface-bright": "#3a3939", "on-surface-variant": "#e8bcb6", "light-surface": "#FFFFFF", "on-secondary-fixed": "#3d0600", "surface-container-highest": "#353534", "light-text-muted": "#6B6B6B", "secondary-fixed": "#ffdad2", "tertiary": "#eec140", "light-surface-alt": "#F3E9DD", "surface-tint": "#ffb4a9", "secondary": "#ffb4a3", "outline-variant": "#5e3f3a", "inverse-primary": "#c00006", "primary-fixed": "#ffdad5", "on-primary": "#690001", "light-border": "E5D8C8", "surface-container": "#201f1f", "tertiary-fixed-dim": "#eec140", "border-dark": "#2A2A2A", "on-secondary-fixed-variant": "#7f2a17", "surface-variant": "#353534", "error": "#ffb4ab", "on-primary-container": "#fff4f2", "inverse-on-surface": "#313030", "on-primary-fixed-variant": "#930003", "on-tertiary-container": "#fff4e3", "surface-container-lowest": "#0e0e0e", "light-background": "#FFF8F0", "danger": "#FF4D4D", "secondary-container": "#7f2a17", "surface-container-low": "#1c1b1b", "inverse-surface": "#e5e2e1", "on-surface": "#e5e2e1", "on-secondary-container": "#ff9b83", "on-secondary": "#601403", "primary-fixed-dim": "#ffb4a9", "on-primary-fixed": "#410001", "secondary-fixed-dim": "#ffb4a3", "on-tertiary": "#3e2e00", "outline": "#af8782", "surface-container-high": "#2a2a2a", "on-error": "#690005", "on-tertiary-fixed-variant": "#594400", "success": "#3DDC84", "tertiary-fixed": "#ffdf92", "on-tertiary-fixed": "#241a00", "background": "#131313", "light-text-primary": "#1A1A1A", "surface": "#161616", "primary-container": "#e10f0f", "surface-alt": "#1F1F1F", "primary": "#ffb4a9", "on-error-container": "#ffdad6", "primary-dark": "#A80B0B", "tertiary-container": "#8c6c00", "on-background": "#e5e2e1" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem" }, "fontFamily": { "body-md": ["Inter"], "label-sm": ["Space Grotesk"], "label-md": ["Space Grotesk"], "price-lg": ["Space Grotesk"], "headline-md": ["Space Grotesk"], "body-lg": ["Inter"], "display-lg": ["Space Grotesk"], "title-md": ["Inter"], "headline-lg": ["Space Grotesk"], "price-md": ["Space Grotesk"], "body-sm": ["Inter"], "display-tagline": ["Caveat"], "headline-sm": ["Space Grotesk"] }, "fontSize": { "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}], "label-md": ["13px", {"lineHeight": "16px", "fontWeight": "600"}], "price-lg": ["20px", {"lineHeight": "24px", "fontWeight": "700"}], "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "display-lg": ["36px", {"lineHeight": "44px", "fontWeight": "700"}], "title-md": ["16px", {"lineHeight": "22px", "fontWeight": "600"}], "headline-lg": ["28px", {"lineHeight": "34px", "fontWeight": "700"}], "price-md": ["16px", {"lineHeight": "20px", "fontWeight": "700"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "display-tagline": ["26px", {"lineHeight": "32px", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}] } } } }</script></head><body class="bg-background text-on-background flex flex-col min-h-screen selection:bg-primary-container selection:text-white"><header class="fixed top-0 inset-x-0 z-50 bg-background/85 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="relative flex items-center justify-center"><div class="w-10 h-10 rounded-full bg-surface-alt flex items-center justify-center overflow-hidden"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WjwM2u1Oghkk5hovhI4sit8fPp9_8aZx68BbAtkZFUxIv2751jMvQvUZJq_uN9RwUaEZF-kRjx6P49AA2w_mtQLhFPQK9XTXOmgjtri5RTYql7JKo_IxB2zZnRfGt_e6W0B46COIKic2fmltz6_pOgHe1kcevsq0cpeh1mGzOS9nst963yrVcMhakWlN2vIOkIz4qbVJdnPjGgl6n558LxfeySoX8fluElZYeDq4z3P7J2A6uhvU5jjLkVlpVn8oYKr6XWKRMAYpA"/></div></div><div class="flex flex-col justify-center leading-none min-w-0"><div class="flex items-center gap-space-xs"><span class="text-secondary font-headline-md text-headline-md tracking-tight uppercase leading-none truncate">On Fire</span></div><span class="text-tertiary font-display-tagline text-display-tagline tracking-wide -mt-1 leading-none">Taste the heat</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Toggle theme" class="w-11 h-11 rounded-full bg-surface-container flex items-center justify-center text-text-muted hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-background min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Live Status & KDS Overview Header Banner -->
+<div class="px-margin pt-2 pb-space-md">
+<div class="bg-surface-container rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<!-- Glow ambient backdrop element -->
+<div class="absolute -right-10 -top-10 w-36 h-36 bg-primary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container animate-pulse" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Kitchen Order Display</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-alt px-space-sm py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-success animate-ping"></span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Live Station</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-1">
+<div class="flex-1 bg-surface-alt rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Active Heat</span>
+<span class="font-headline-md text-headline-md text-tertiary">4 <span class="font-body-sm text-body-sm text-text-muted">Tickets</span></span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-2xl">timer</span>
+</div>
+<div class="flex-1 bg-surface-alt rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted uppercase">Pass Ready</span>
+<span class="font-headline-md text-headline-md text-success">2 <span class="font-body-sm text-body-sm text-text-muted">Trays</span></span>
+</div>
+<span class="material-symbols-outlined text-success text-2xl">room_service</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dine-in Callout Card (High-priority alert) -->
+<div class="px-margin mb-space-md" id="service-request-box">
+<div class="bg-secondary-container/40 rounded-xl p-space-md shadow-md flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-xl">notifications_active</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-text-primary">Table 07 Request</span>
+<span class="bg-primary-container text-white font-label-sm text-[10px] px-1.5 py-0.5 rounded-full uppercase leading-none">New</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate">Extra Napkins &amp; Chilled Water</p>
+</div>
+</div>
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-alt text-secondary hover:text-white font-label-sm text-label-sm transition-colors active:scale-95 flex items-center gap-1 shadow-sm" id="resolve-request-btn">
+<span class="material-symbols-outlined text-sm">done</span>
+<span>Resolve</span>
+</button>
+</div>
+</div>
+<!-- Interactive Filter Tabs -->
+<div class="px-margin mb-space-md">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1" id="kds-filters">
+<button class="kds-tab active shrink-0 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all bg-primary-container text-white shadow-[0px_4px_16px_rgba(225,15,15,0.35)]">
+        All Tickets (6)
+      </button>
+<button class="kds-tab shrink-0 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all bg-surface-container text-text-muted hover:text-on-surface">
+        In Prep (4)
+      </button>
+<button class="kds-tab shrink-0 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all bg-surface-container text-text-muted hover:text-on-surface">
+        Ready (2)
+      </button>
+<button class="kds-tab shrink-0 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all bg-surface-container text-text-muted hover:text-on-surface flex items-center gap-1">
+<span>Requests</span>
+<span class="bg-primary-container text-white font-label-sm text-[10px] px-1 rounded-full font-bold" id="requests-badge">1</span>
+</button>
+</div>
+</div>
+<!-- Ticket Queue Section -->
+<div class="px-margin flex flex-col gap-space-lg">
+<!-- Ticket 1: RUSH (Table 07) -->
+<div class="bg-surface-container rounded-xl shadow-lg overflow-hidden flex flex-col relative transition-all" id="ticket-8492">
+<!-- Top Ticket Header Info -->
+<div class="p-space-md bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">#OF-8492</span>
+<span class="bg-primary-container text-white font-label-sm text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-bold animate-pulse">RUSH</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">Dine-In • Table 07</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-2.5 py-1 rounded-lg">
+<span class="material-symbols-outlined text-danger text-sm animate-spin" style="animation-duration: 3s;">schedule</span>
+<span class="font-label-md text-label-md text-danger" id="timer-8492">12m elapsed</span>
+</div>
+</div>
+<!-- Ticket Items List -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Item 1 (Inferno Burger) -->
+<div class="flex items-start justify-between gap-space-sm p-space-sm rounded-lg bg-surface-alt transition-colors" id="item-row-1">
+<div class="flex flex-col gap-space-xs min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-tertiary">1x</span>
+<span class="font-title-md text-title-md text-text-primary truncate">Inferno Burger</span>
+</div>
+<!-- Modifiers Chips -->
+<div class="flex flex-wrap gap-1 mt-0.5">
+<span class="bg-secondary-container/50 text-secondary font-label-sm text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">local_fire_department</span> Inferno Spice
+              </span>
+<span class="bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded-full">
+                Extra Cheddar
+              </span>
+<span class="bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px] px-2 py-0.5 rounded-full">
+                Crispy Bacon
+              </span>
+</div>
+</div>
+<!-- Item Toggle Button -->
+<button class="shrink-0 p-2 rounded-lg bg-surface-container hover:bg-surface-container-highest text-text-muted hover:text-white transition-colors" id="toggle-item-1" title="Toggle Item Status">
+<span class="material-symbols-outlined text-lg" id="icon-item-1">radio_button_unchecked</span>
+</button>
+</div>
+<!-- Item 2 (Fire Wings - Already Ready) -->
+<div class="flex items-start justify-between gap-space-sm p-space-sm rounded-lg bg-surface-alt/60 transition-colors">
+<div class="flex flex-col gap-space-xs min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-text-muted line-through">1x</span>
+<span class="font-title-md text-title-md text-text-muted line-through truncate">Fire Wings</span>
+</div>
+<div class="flex flex-wrap gap-1 mt-0.5 opacity-60">
+<span class="bg-surface-container-highest text-text-muted font-label-sm text-[10px] px-2 py-0.5 rounded-full">
+                8 pcs
+              </span>
+<span class="bg-surface-container-highest text-text-muted font-label-sm text-[10px] px-2 py-0.5 rounded-full">
+                Spicy Glaze
+              </span>
+</div>
+</div>
+<!-- Marked Ready Status Badge -->
+<div class="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-success/15 text-success">
+<span class="material-symbols-outlined text-sm font-bold">check_circle</span>
+<span class="font-label-sm text-label-sm">Ready</span>
+</div>
+</div>
+</div>
+<!-- Ticket Actions Bar -->
+<div class="p-space-md pt-0 flex items-center gap-space-sm">
+<button class="px-3 py-2.5 rounded-lg bg-surface-alt hover:bg-surface-container-highest text-text-muted hover:text-tertiary font-label-sm text-label-sm transition-colors flex items-center gap-1 active:scale-95 shrink-0" id="delay-btn-8492">
+<span class="material-symbols-outlined text-sm">snooze</span>
+<span>+5m Delay</span>
+</button>
+<button class="flex-1 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-alt text-on-surface font-label-md text-label-md transition-colors active:scale-95 text-center" id="start-prep-btn">
+          In Prep
+        </button>
+<button class="flex-1 py-2.5 rounded-lg bg-primary-container hover:bg-primary-dark text-white font-label-md text-label-md shadow-[0px_4px_16px_rgba(225,15,15,0.35)] transition-all active:scale-95 text-center font-bold" id="mark-ready-btn">
+          Mark Ready
+        </button>
+</div>
+</div>
+<!-- Ticket 2: Table 03 (Elapsed 22m) -->
+<div class="bg-surface-container rounded-xl shadow-lg overflow-hidden flex flex-col relative transition-all" id="ticket-8490">
+<!-- Top Ticket Header Info -->
+<div class="p-space-md bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">#OF-8490</span>
+<span class="bg-surface-container text-tertiary font-label-sm text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-semibold">Ready to Pass</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">Dine-In • Table 03</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-2.5 py-1 rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-sm">schedule</span>
+<span class="font-label-md text-label-md text-tertiary">22m elapsed</span>
+</div>
+</div>
+<!-- Ticket Items List -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Item 1 (Spicy Ramen) -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm rounded-lg bg-surface-alt">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-headline-sm text-headline-sm text-tertiary">2x</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary truncate">Spicy Ramen</span>
+<span class="font-body-sm text-body-sm text-text-muted">Level 3 • Soft Poached Egg</span>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-success/15 text-success">
+<span class="material-symbols-outlined text-sm font-bold">done_all</span>
+</div>
+</div>
+<!-- Item 2 (Molten Lava Cake) -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm rounded-lg bg-surface-alt">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-headline-sm text-headline-sm text-tertiary">1x</span>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary truncate">Molten Lava Cake</span>
+<span class="font-body-sm text-body-sm text-text-muted">With Smoked Salt Flakes</span>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-success/15 text-success">
+<span class="material-symbols-outlined text-sm font-bold">done_all</span>
+</div>
+</div>
+</div>
+<!-- Ticket Actions Bar: Complete Action -->
+<div class="p-space-md pt-0">
+<button class="w-full py-3 rounded-lg bg-success hover:bg-success/90 text-surface-container-lowest font-headline-sm text-headline-sm transition-all active:scale-[0.98] flex items-center justify-center gap-space-xs font-bold shadow-md" id="complete-btn-8490">
+<span class="material-symbols-outlined font-bold">check_circle</span>
+<span>Complete Ticket</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Audio Simulation Toast notification (Floating) -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none transition-all duration-300 opacity-0 translate-y-4" id="kitchen-toast">
+<div class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-full shadow-2xl flex items-center gap-2 border-none">
+<span class="material-symbols-outlined text-tertiary text-sm" id="toast-icon">bolt</span>
+<span class="font-label-md text-label-md" id="toast-msg">KDS updated</span>
+</div>
+</div>
+</div>
+<script>
+  // Simple Micro-interactions for Kitchen Display Simulation
+  const toast = document.getElementById('kitchen-toast');
+  const toastMsg = document.getElementById('toast-msg');
+  const toastIcon = document.getElementById('toast-icon');
+
+  function showToast(msg, icon = 'check_circle') {
+    if (!toast) return;
+    toastMsg.textContent = msg;
+    toastIcon.textContent = icon;
+    toast.classList.remove('opacity-0', 'translate-y-4');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-4');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2200);
+  }
+
+  // Toggle modifier / dish item state
+  const toggleItemBtn = document.getElementById('toggle-item-1');
+  const iconItem1 = document.getElementById('icon-item-1');
+  const itemRow1 = document.getElementById('item-row-1');
+  let isItem1Ready = false;
+
+  if (toggleItemBtn) {
+    toggleItemBtn.addEventListener('click', () => {
+      isItem1Ready = !isItem1Ready;
+      if (isItem1Ready) {
+        iconItem1.textContent = 'check_circle';
+        iconItem1.classList.add('text-success');
+        itemRow1.classList.add('opacity-60');
+        showToast('Inferno Burger marked ready', 'restaurant');
+      } else {
+        iconItem1.textContent = 'radio_button_unchecked';
+        iconItem1.classList.remove('text-success');
+        itemRow1.classList.remove('opacity-60');
+      }
+    });
+  }
+
+  // Delay button simulation
+  const delayBtn = document.getElementById('delay-btn-8492');
+  const timerLabel = document.getElementById('timer-8492');
+  if (delayBtn && timerLabel) {
+    delayBtn.addEventListener('click', () => {
+      timerLabel.textContent = '17m (Delayed +5m)';
+      timerLabel.classList.remove('text-danger');
+      timerLabel.classList.add('text-tertiary');
+      showToast('Order #OF-8492 delayed 5 minutes', 'snooze');
+    });
+  }
+
+  // Mark ready & Start prep buttons
+  const markReadyBtn = document.getElementById('mark-ready-btn');
+  const startPrepBtn = document.getElementById('start-prep-btn');
+  if (markReadyBtn) {
+    markReadyBtn.addEventListener('click', () => {
+      showToast('Ticket #OF-8492 dispatched to Pass Tray!', 'room_service');
+    });
+  }
+  if (startPrepBtn) {
+    startPrepBtn.addEventListener('click', () => {
+      startPrepBtn.classList.add('bg-primary-dark', 'text-white');
+      startPrepBtn.textContent = 'Firing Now';
+      showToast('Order actively on the grill', 'local_fire_department');
+    });
+  }
+
+  // Complete Ticket 8490
+  const completeBtn = document.getElementById('complete-btn-8490');
+  const ticket8490 = document.getElementById('ticket-8490');
+  if (completeBtn && ticket8490) {
+    completeBtn.addEventListener('click', () => {
+      ticket8490.style.transition = 'all 0.4s ease';
+      ticket8490.style.opacity = '0.3';
+      ticket8490.style.transform = 'scale(0.96)';
+      showToast('Ticket #OF-8490 Cleared & Served!', 'check_circle');
+      setTimeout(() => {
+        ticket8490.style.display = 'none';
+      }, 500);
+    });
+  }
+
+  // Resolve service callout
+  const resolveBtn = document.getElementById('resolve-request-btn');
+  const requestBox = document.getElementById('service-request-box');
+  const requestsBadge = document.getElementById('requests-badge');
+  if (resolveBtn && requestBox) {
+    resolveBtn.addEventListener('click', () => {
+      requestBox.style.transition = 'all 0.3s ease';
+      requestBox.style.opacity = '0';
+      requestBox.style.transform = 'translateY(-10px)';
+      if (requestsBadge) requestsBadge.style.display = 'none';
+      setTimeout(() => {
+        requestBox.style.display = 'none';
+      }, 300);
+      showToast('Table 07 request resolved by staff', 'thumb_up');
+    });
+  }
+
+  // Filter tabs visual toggle
+  const tabs = document.querySelectorAll('.kds-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.className = 'kds-tab shrink-0 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all bg-surface-container text-text-muted hover:text-on-surface';
+      });
+      tab.className = 'kds-tab active shrink-0 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all bg-primary-container text-white shadow-[0px_4px_16px_rgba(225,15,15,0.35)]';
+    });
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-background/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)]" data-active-classes="text-primary-container [filter:drop-shadow(0px_4px_12px_rgba(225,15,15,0.35))]"><div class="flex justify-around items-center h-18 px-margin"><a class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] h-14 text-text-muted transition-all" data-path="menu" href="#"><span class="material-symbols-outlined text-[24px]">restaurant_menu</span><span class="font-label-sm text-label-sm tracking-wide">Menu</span></a><a class="relative flex flex-col items-center justify-center gap-space-xs min-w-[56px] h-14 text-text-muted transition-all" data-path="cart" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">local_mall</span><span class="absolute -top-1 -right-2 bg-primary-container text-white font-label-sm text-[10px] min-w-[16px] h-4 px-1 rounded-full flex items-center justify-center leading-none font-bold">2</span></div><span class="font-label-sm text-label-sm tracking-wide">Cart</span></a><a class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] h-14 text-text-muted transition-all" data-path="orders" href="#"><span class="material-symbols-outlined text-[24px]">receipt_long</span><span class="font-label-sm text-label-sm tracking-wide">Orders</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-space-xs min-w-[56px] h-14 transition-all text-primary-container [filter:drop-shadow(0px_4px_12px_rgba(225,15,15,0.35))]" data-path="kitchen" href="#"><span class="material-symbols-outlined text-[24px]">local_fire_department</span><span class="font-label-sm text-label-sm tracking-wide">Kitchen</span></a></div></nav></body></html>

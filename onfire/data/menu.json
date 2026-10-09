@@ -1,0 +1,180 @@
+[
+  {
+    "id": "dish_1",
+    "name": "Fire Wings",
+    "category": "Starters",
+    "description": "Wood-fired jumbo chicken wings tossed in smoked ghost pepper butter.",
+    "price": 650,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBj5TMH6v25wDhIW7AA72LOrJQOy8Wys7notFOO6pniYGECwAaxh-wq_uZyEiTV7kLycmNZQdbWnVzHqYhbEvCfzVjgE3qLc6QqMHcBcOS7Gx90Qmb6IX9DGIozexeYf0j7SNZTpNpxIGyAiT6BdO62aMEta9aMRkywCvOaeOSZw-sjQGnnAg1fpxc1bMGA-qw3NmD0CuMQd5AroWx0b4AgU3LryemNsGTYElX73Q2ijvIMsZ4iDSne7A",
+    "prepTimeMin": 15,
+    "available": true,
+    "addOns": [
+      { "id": "addon_1", "name": "Extra Ghost Pepper Glaze", "price": 80 },
+      { "id": "addon_2", "name": "Blue Cheese Dip", "price": 50 }
+    ],
+    "optionGroups": [
+      {
+        "id": "spice_level",
+        "name": "Spice Level",
+        "choices": [
+          { "id": "mild", "name": "Mild", "price": 0 },
+          { "id": "medium", "name": "Medium", "price": 0 },
+          { "id": "inferno", "name": "Inferno", "price": 0 }
+        ]
+      }
+    ],
+    "tags": ["Spicy", "Nut-Free"]
+  },
+  {
+    "id": "dish_2",
+    "name": "Inferno Burger",
+    "category": "Mains",
+    "description": "Double smashed patty with ghost pepper glaze & smoked gouda.",
+    "price": 850,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBKVSuXOUEVj_HMzQtsqrL2T0EegBK15z3dNH1h1YgGTcHvMXrYHfZbVqpnjgmTbsS9BGhEoPzJe1S9f7gjPlgiSoFrHrdUOYcNWpV15to3q7hdWRyds9sMrAtgwt9eUWUK_HHs3_7Op-nqJHHdkdvAVegII9VZW1Z72r1s1gQr6DCf2Xzvt1cTsE8sQpcTcpH9w0vlR4JYyADmAyhYkrU-HVr1kPM_Gih-5XwSXyk-kmHSWnYozTIFZA",
+    "prepTimeMin": 20,
+    "available": true,
+    "addOns": [
+      { "id": "addon_b1", "name": "Extra Patty", "price": 250 },
+      { "id": "addon_b2", "name": "Bacon", "price": 150 }
+    ],
+    "optionGroups": [],
+    "tags": ["Spicy"]
+  },
+  {
+    "id": "dish_3",
+    "name": "Spicy Ramen",
+    "category": "Mains",
+    "description": "Rich chili tonkotsu broth, hand-pulled noodles, charred chashu.",
+    "price": 920,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCwNrPqQTb8VvvpZDeUrhScsd_pCnWON9w2_CONYqiuXT26MHhoUU4su4XHioHK5fOPUpIkKNDAVA__C8WO73SQRylMiU7uYBtW3fXzRH_I-qIJuT2-czHRDzbzqJN04h7XG-DFavlA_7hGgGYFrfrfDH_Yl6CnSkzXbGrgxrqyRjD84iS3USW85S98rk7epKjVIuIRDT3gRsOaJRnCJO3AiYkSn1bnfLTAVcKwwVX_k7EW_rnMCkEQsQ",
+    "prepTimeMin": 18,
+    "available": true,
+    "stock": 3,
+    "addOns": [
+      { "id": "addon_r1", "name": "Extra Egg", "price": 60 }
+    ],
+    "optionGroups": [],
+    "tags": ["Spicy", "Dairy-Free"]
+  },
+  {
+    "id": "dish_4",
+    "name": "Molten Lava Cake",
+    "category": "Desserts",
+    "description": "Warm dark chocolate sponge oozing spiced ganache & smoked vanilla.",
+    "price": 540,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC4PCuqPsfBxEHgKdJvnl2CYsl2oL9Z0cXzlFOSlNo_KJJLIer7S3eID7NHYZ-_LzBfaTO01huevjDBSDJKobDqzKf1DwBQzddoWR02ihlNwfsCCYLKAoDYDAQ0vWsRyJH07VoUNfi93I5O14mBupme3TXhFwrcDg4mVu55wOh2vkn3Bpcpkw1roOizYHZy3NDe9T396KmKSjXSYwmVGrJ3AI_C_IcUPWARjZCbgs84h3CahnK5riUshQ",
+    "prepTimeMin": 12,
+    "available": true,
+    "addOns": [],
+    "optionGroups": [],
+    "tags": ["Veg"]
+  },
+  {
+    "id": "dish_5",
+    "name": "Smoked Ribs Platter",
+    "category": "Mains",
+    "description": "14-hour hickory smoked ribs with spicy pitmaster mop sauce.",
+    "price": 1460,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCeU3Xpsc3fPVOr28widrrDvnOdFvJx0dDHOYUZ8WslIfD8WufKtWYabCLKEGtmYXNTkbUr2wkz4kBpOK26efxzln8qMmq91lvJkHDTjayzxsikdXBN4bmAsZPTjox2tCiOmdb_REv929FtRKY_OCKH2e_vGfgImVrJfacEiNfE6_ZMdI7TsEkppCgmkWyBLYUK3_YPWztlLG4V7rjw-LPnt2CyQSwiy2Tdmyr7aFCJSUD4SByURoEoqg",
+    "prepTimeMin": 30,
+    "available": false,
+    "addOns": [],
+    "optionGroups": [],
+    "tags": ["Spicy", "Gluten-Free", "Dairy-Free"]
+  },
+  {
+    "id": "dish_6",
+    "name": "Ember Smoked Cola",
+    "category": "Drinks",
+    "description": "House cola infused with smoked cherrywood.",
+    "price": 180,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCeU3Xpsc3fPVOr28widrrDvnOdFvJx0dDHOYUZ8WslIfD8WufKtWYabCLKEGtmYXNTkbUr2wkz4kBpOK26efxzln8qMmq91lvJkHDTjayzxsikdXBN4bmAsZPTjox2tCiOmdb_REv929FtRKY_OCKH2e_vGfgImVrJfacEiNfE6_ZMdI7TsEkppCgmkWyBLYUK3_YPWztlLG4V7rjw-LPnt2CyQSwiy2Tdmyr7aFCJSUD4SByURoEoqg",
+    "prepTimeMin": 5,
+    "available": true,
+    "addOns": [],
+    "optionGroups": [],
+    "tags": ["Veg", "Gluten-Free", "Dairy-Free"]
+  },
+  {
+    "id": "dish_7",
+    "name": "Charred Caesar Salad",
+    "category": "Starters",
+    "description": "Grilled romaine hearts, smoked parmesan, chili croutons.",
+    "price": 480,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBj5TMH6v25wDhIW7AA72LOrJQOy8Wys7notFOO6pniYGECwAaxh-wq_uZyEiTV7kLycmNZQdbWnVzHqYhbEvCfzVjgE3qLc6QqMHcBcOS7Gx90Qmb6IX9DGIozexeYf0j7SNZTpNpxIGyAiT6BdO62aMEta9aMRkywCvOaeOSZw-sjQGnnAg1fpxc1bMGA-qw3NmD0CuMQd5AroWx0b4AgU3LryemNsGTYElX73Q2ijvIMsZ4iDSne7A",
+    "prepTimeMin": 10,
+    "available": true,
+    "addOns": [],
+    "optionGroups": [],
+    "tags": ["Veg", "Nut-Free"]
+  },
+  {
+    "id": "dish_8",
+    "name": "Volcano Fries",
+    "category": "Starters",
+    "description": "Crispy fries loaded with spicy cheese sauce and jalapeños.",
+    "price": 350,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBj5TMH6v25wDhIW7AA72LOrJQOy8Wys7notFOO6pniYGECwAaxh-wq_uZyEiTV7kLycmNZQdbWnVzHqYhbEvCfzVjgE3qLc6QqMHcBcOS7Gx90Qmb6IX9DGIozexeYf0j7SNZTpNpxIGyAiT6BdO62aMEta9aMRkywCvOaeOSZw-sjQGnnAg1fpxc1bMGA-qw3NmD0CuMQd5AroWx0b4AgU3LryemNsGTYElX73Q2ijvIMsZ4iDSne7A",
+    "prepTimeMin": 8,
+    "available": true,
+    "stock": 2,
+    "addOns": [
+      { "id": "addon_vf1", "name": "Extra Cheese", "price": 60 }
+    ],
+    "optionGroups": [],
+    "tags": ["Veg", "Spicy"]
+  },
+  {
+    "id": "dish_9",
+    "name": "Truffle Fire Pizza",
+    "category": "Mains",
+    "description": "Wood-fired crust, black truffle paste, smoked mozzarella.",
+    "price": 1150,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBKVSuXOUEVj_HMzQtsqrL2T0EegBK15z3dNH1h1YgGTcHvMXrYHfZbVqpnjgmTbsS9BGhEoPzJe1S9f7gjPlgiSoFrHrdUOYcNWpV15to3q7hdWRyds9sMrAtgwt9eUWUK_HHs3_7Op-nqJHHdkdvAVegII9VZW1Z72r1s1gQr6DCf2Xzvt1cTsE8sQpcTcpH9w0vlR4JYyADmAyhYkrU-HVr1kPM_Gih-5XwSXyk-kmHSWnYozTIFZA",
+    "prepTimeMin": 25,
+    "available": false,
+    "addOns": [],
+    "optionGroups": [],
+    "tags": ["Veg", "Nut-Free"]
+  },
+  {
+    "id": "dish_10",
+    "name": "Smoked Caramel Cheesecake",
+    "category": "Desserts",
+    "description": "New York style cheesecake with smoked salted caramel.",
+    "price": 490,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC4PCuqPsfBxEHgKdJvnl2CYsl2oL9Z0cXzlFOSlNo_KJJLIer7S3eID7NHYZ-_LzBfaTO01huevjDBSDJKobDqzKf1DwBQzddoWR02ihlNwfsCCYLKAoDYDAQ0vWsRyJH07VoUNfi93I5O14mBupme3TXhFwrcDg4mVu55wOh2vkn3Bpcpkw1roOizYHZy3NDe9T396KmKSjXSYwmVGrJ3AI_C_IcUPWARjZCbgs84h3CahnK5riUshQ",
+    "prepTimeMin": 5,
+    "available": true,
+    "addOns": [],
+    "optionGroups": [],
+    "tags": ["Veg", "Nut-Free"]
+  },
+  {
+    "id": "dish_11",
+    "name": "Fiery Lemonade",
+    "category": "Drinks",
+    "description": "Classic lemonade infused with crushed red pepper.",
+    "price": 160,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCeU3Xpsc3fPVOr28widrrDvnOdFvJx0dDHOYUZ8WslIfD8WufKtWYabCLKEGtmYXNTkbUr2wkz4kBpOK26efxzln8qMmq91lvJkHDTjayzxsikdXBN4bmAsZPTjox2tCiOmdb_REv929FtRKY_OCKH2e_vGfgImVrJfacEiNfE6_ZMdI7TsEkppCgmkWyBLYUK3_YPWztlLG4V7rjw-LPnt2CyQSwiy2Tdmyr7aFCJSUD4SByURoEoqg",
+    "prepTimeMin": 5,
+    "available": true,
+    "addOns": [],
+    "optionGroups": [],
+    "tags": ["Veg", "Spicy", "Dairy-Free"]
+  },
+  {
+    "id": "dish_12",
+    "name": "Habanero Grilled Shrimp",
+    "category": "Starters",
+    "description": "Char-grilled shrimp skewers with a habanero mango glaze.",
+    "price": 720,
+    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBj5TMH6v25wDhIW7AA72LOrJQOy8Wys7notFOO6pniYGECwAaxh-wq_uZyEiTV7kLycmNZQdbWnVzHqYhbEvCfzVjgE3qLc6QqMHcBcOS7Gx90Qmb6IX9DGIozexeYf0j7SNZTpNpxIGyAiT6BdO62aMEta9aMRkywCvOaeOSZw-sjQGnnAg1fpxc1bMGA-qw3NmD0CuMQd5AroWx0b4AgU3LryemNsGTYElX73Q2ijvIMsZ4iDSne7A",
+    "prepTimeMin": 15,
+    "available": true,
+    "addOns": [],
+    "optionGroups": [],
+    "tags": ["Spicy", "Dairy-Free"]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "code": "SAVE10",
+    "type": "percent",
+    "value": 10,
+    "description": "10% off your entire order"
+  },
+  {
+    "code": "FLAT100",
+    "type": "flat",
+    "value": 100,
+    "description": "Rs. 100 off your order"
+  }
+]
