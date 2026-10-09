@@ -52,11 +52,6 @@ export default function CartScreen() {
 
   const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: theme.background },
-    header: {
-      paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingHorizontal: 16, paddingBottom: 16,
-      backgroundColor: theme.background, flexDirection: 'row', alignItems: 'center',
-    },
-    headerTitle: { fontFamily: 'SpaceGrotesk-Bold', fontSize: 24, color: theme.textPrimary, marginLeft: 16 },
     emptyState: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
     emptyText: { fontFamily: 'Inter-Regular', fontSize: 16, color: theme.textMuted, marginTop: 16 },
     cartItem: {
@@ -105,9 +100,6 @@ export default function CartScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>Your Cart</Text>
-      </View>
 
       {items.length === 0 ? (
         <View style={styles.emptyState}>

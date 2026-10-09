@@ -3,6 +3,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Order, OrderStatus, DishStatus, DineInRequest } from '../types';
 import * as Haptics from 'expo-haptics';
+import { notify } from '../utils/notify';
 
 interface OrderState {
   orders: Order[];
@@ -49,6 +50,7 @@ export const useOrderStore = create<OrderState>()(
         set((state) => ({ orders: [newOrder, ...state.orders] }));
         
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
+        notify('Order Placed!', `Your order ${id} has been placed successfully.`);
         return id;
       },
 
@@ -62,6 +64,15 @@ export const useOrderStore = create<OrderState>()(
           const newStatus = STATUS_FLOW[nextIndex];
           
           Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+          
+          let title = `Order ${newStatus}`;
+          let body = `Your order ${orderId} is now ${newStatus}.`;
+          if (newStatus === 'Preparing') body = 'The kitchen has started preparing your food.';
+          if (newStatus === 'Ready') body = 'Your order is ready to be picked up!';
+          
+          if (newStatus !== 'Completed') {
+            notify(title, body);
+          }
           
           return {
             orders: state.orders.map(o => o.id === orderId ? { ...o, status: newStatus } : o)

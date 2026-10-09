@@ -10,7 +10,8 @@ export function Header({ title }: { title?: string }) {
   const theme = useTheme();
   const router = useRouter();
   const { logout } = useAuthStore();
-  const { isDarkMode, setDarkMode } = useSettingsStore();
+  const { theme: appTheme, toggleTheme } = useSettingsStore();
+  const isDarkMode = appTheme === 'dark';
   const [menuVisible, setMenuVisible] = useState(false);
 
   const handleLogout = () => {
@@ -65,8 +66,7 @@ export function Header({ title }: { title?: string }) {
           <Text style={styles.pageTitle}>{title}</Text>
         ) : (
           <View style={styles.logoRow}>
-            {/* The Logo! We'll use a local flame icon or remote image */}
-            <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/512/785/785116.png' }} style={styles.logoImg} />
+            <Image source={require('../assets/images/onfire_logo.png')} style={styles.logoImg} />
             <Text style={styles.brandTitle}>On Fire</Text>
           </View>
         )}
@@ -106,7 +106,7 @@ export function Header({ title }: { title?: string }) {
               <MaterialIcons name="dark-mode" size={24} color={theme.textPrimary} />
               <Text style={styles.menuItemText}>Dark Mode</Text>
               <TouchableOpacity 
-                onPress={() => setDarkMode(!isDarkMode)}
+                onPress={toggleTheme}
                 style={{
                   width: 50, height: 28, borderRadius: 14,
                   backgroundColor: isDarkMode ? theme.primary : theme.border,

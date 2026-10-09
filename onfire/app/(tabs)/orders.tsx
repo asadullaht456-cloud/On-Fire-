@@ -18,11 +18,6 @@ export default function OrdersScreen() {
 
   const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: theme.background },
-    header: {
-      paddingTop: Platform.OS === 'ios' ? 60 : 40, paddingHorizontal: 16, paddingBottom: 16,
-      backgroundColor: theme.background,
-    },
-    headerTitle: { fontFamily: 'SpaceGrotesk-Bold', fontSize: 24, color: theme.textPrimary },
     section: { padding: 16 },
     sectionTitle: { fontFamily: 'SpaceGrotesk-Bold', fontSize: 18, color: theme.textMuted, marginBottom: 12, marginLeft: 8 },
     card: {
@@ -51,7 +46,7 @@ export default function OrdersScreen() {
       <TouchableOpacity 
         key={order.id} 
         style={styles.card}
-        onPress={() => router.push(isActive ? `/tracking/${order.id}` : `/order/${order.id}`)}
+        onPress={() => router.push(isActive ? '/(tabs)/tracking' : `/order/${order.id}`)}
       >
         <View style={styles.cardHeader}>
           <Text style={styles.orderId}>{order.id}</Text>
@@ -77,10 +72,6 @@ export default function OrdersScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>Your Orders</Text>
-      </View>
-
       <ScrollView showsVerticalScrollIndicator={false}>
         {activeOrder && (
           <View style={styles.section}>

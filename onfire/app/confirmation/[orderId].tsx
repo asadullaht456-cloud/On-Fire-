@@ -59,7 +59,7 @@ export default function ConfirmationScreen() {
         <TouchableOpacity 
           style={styles.btn} 
           onPress={() => {
-            router.replace(`/tracking/${order.id}`);
+            router.replace('/(tabs)/tracking');
           }}
         >
           <Text style={styles.btnText}>Track Order</Text>

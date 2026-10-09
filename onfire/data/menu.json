@@ -1,180 +1,486 @@
-[
-  {
-    "id": "dish_1",
-    "name": "Fire Wings",
-    "category": "Starters",
-    "description": "Wood-fired jumbo chicken wings tossed in smoked ghost pepper butter.",
-    "price": 650,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBj5TMH6v25wDhIW7AA72LOrJQOy8Wys7notFOO6pniYGECwAaxh-wq_uZyEiTV7kLycmNZQdbWnVzHqYhbEvCfzVjgE3qLc6QqMHcBcOS7Gx90Qmb6IX9DGIozexeYf0j7SNZTpNpxIGyAiT6BdO62aMEta9aMRkywCvOaeOSZw-sjQGnnAg1fpxc1bMGA-qw3NmD0CuMQd5AroWx0b4AgU3LryemNsGTYElX73Q2ijvIMsZ4iDSne7A",
-    "prepTimeMin": 15,
-    "available": true,
-    "addOns": [
-      { "id": "addon_1", "name": "Extra Ghost Pepper Glaze", "price": 80 },
-      { "id": "addon_2", "name": "Blue Cheese Dip", "price": 50 }
-    ],
-    "optionGroups": [
-      {
-        "id": "spice_level",
-        "name": "Spice Level",
-        "choices": [
-          { "id": "mild", "name": "Mild", "price": 0 },
-          { "id": "medium", "name": "Medium", "price": 0 },
-          { "id": "inferno", "name": "Inferno", "price": 0 }
-        ]
-      }
-    ],
-    "tags": ["Spicy", "Nut-Free"]
-  },
-  {
-    "id": "dish_2",
-    "name": "Inferno Burger",
-    "category": "Mains",
-    "description": "Double smashed patty with ghost pepper glaze & smoked gouda.",
-    "price": 850,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBKVSuXOUEVj_HMzQtsqrL2T0EegBK15z3dNH1h1YgGTcHvMXrYHfZbVqpnjgmTbsS9BGhEoPzJe1S9f7gjPlgiSoFrHrdUOYcNWpV15to3q7hdWRyds9sMrAtgwt9eUWUK_HHs3_7Op-nqJHHdkdvAVegII9VZW1Z72r1s1gQr6DCf2Xzvt1cTsE8sQpcTcpH9w0vlR4JYyADmAyhYkrU-HVr1kPM_Gih-5XwSXyk-kmHSWnYozTIFZA",
-    "prepTimeMin": 20,
-    "available": true,
-    "addOns": [
-      { "id": "addon_b1", "name": "Extra Patty", "price": 250 },
-      { "id": "addon_b2", "name": "Bacon", "price": 150 }
-    ],
-    "optionGroups": [],
-    "tags": ["Spicy"]
-  },
-  {
-    "id": "dish_3",
-    "name": "Spicy Ramen",
-    "category": "Mains",
-    "description": "Rich chili tonkotsu broth, hand-pulled noodles, charred chashu.",
-    "price": 920,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCwNrPqQTb8VvvpZDeUrhScsd_pCnWON9w2_CONYqiuXT26MHhoUU4su4XHioHK5fOPUpIkKNDAVA__C8WO73SQRylMiU7uYBtW3fXzRH_I-qIJuT2-czHRDzbzqJN04h7XG-DFavlA_7hGgGYFrfrfDH_Yl6CnSkzXbGrgxrqyRjD84iS3USW85S98rk7epKjVIuIRDT3gRsOaJRnCJO3AiYkSn1bnfLTAVcKwwVX_k7EW_rnMCkEQsQ",
-    "prepTimeMin": 18,
-    "available": true,
-    "stock": 3,
-    "addOns": [
-      { "id": "addon_r1", "name": "Extra Egg", "price": 60 }
-    ],
-    "optionGroups": [],
-    "tags": ["Spicy", "Dairy-Free"]
-  },
-  {
-    "id": "dish_4",
-    "name": "Molten Lava Cake",
-    "category": "Desserts",
-    "description": "Warm dark chocolate sponge oozing spiced ganache & smoked vanilla.",
-    "price": 540,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC4PCuqPsfBxEHgKdJvnl2CYsl2oL9Z0cXzlFOSlNo_KJJLIer7S3eID7NHYZ-_LzBfaTO01huevjDBSDJKobDqzKf1DwBQzddoWR02ihlNwfsCCYLKAoDYDAQ0vWsRyJH07VoUNfi93I5O14mBupme3TXhFwrcDg4mVu55wOh2vkn3Bpcpkw1roOizYHZy3NDe9T396KmKSjXSYwmVGrJ3AI_C_IcUPWARjZCbgs84h3CahnK5riUshQ",
-    "prepTimeMin": 12,
-    "available": true,
-    "addOns": [],
-    "optionGroups": [],
-    "tags": ["Veg"]
-  },
-  {
-    "id": "dish_5",
-    "name": "Smoked Ribs Platter",
-    "category": "Mains",
-    "description": "14-hour hickory smoked ribs with spicy pitmaster mop sauce.",
-    "price": 1460,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCeU3Xpsc3fPVOr28widrrDvnOdFvJx0dDHOYUZ8WslIfD8WufKtWYabCLKEGtmYXNTkbUr2wkz4kBpOK26efxzln8qMmq91lvJkHDTjayzxsikdXBN4bmAsZPTjox2tCiOmdb_REv929FtRKY_OCKH2e_vGfgImVrJfacEiNfE6_ZMdI7TsEkppCgmkWyBLYUK3_YPWztlLG4V7rjw-LPnt2CyQSwiy2Tdmyr7aFCJSUD4SByURoEoqg",
-    "prepTimeMin": 30,
-    "available": false,
-    "addOns": [],
-    "optionGroups": [],
-    "tags": ["Spicy", "Gluten-Free", "Dairy-Free"]
-  },
-  {
-    "id": "dish_6",
-    "name": "Ember Smoked Cola",
-    "category": "Drinks",
-    "description": "House cola infused with smoked cherrywood.",
-    "price": 180,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCeU3Xpsc3fPVOr28widrrDvnOdFvJx0dDHOYUZ8WslIfD8WufKtWYabCLKEGtmYXNTkbUr2wkz4kBpOK26efxzln8qMmq91lvJkHDTjayzxsikdXBN4bmAsZPTjox2tCiOmdb_REv929FtRKY_OCKH2e_vGfgImVrJfacEiNfE6_ZMdI7TsEkppCgmkWyBLYUK3_YPWztlLG4V7rjw-LPnt2CyQSwiy2Tdmyr7aFCJSUD4SByURoEoqg",
-    "prepTimeMin": 5,
-    "available": true,
-    "addOns": [],
-    "optionGroups": [],
-    "tags": ["Veg", "Gluten-Free", "Dairy-Free"]
-  },
-  {
-    "id": "dish_7",
-    "name": "Charred Caesar Salad",
-    "category": "Starters",
-    "description": "Grilled romaine hearts, smoked parmesan, chili croutons.",
-    "price": 480,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBj5TMH6v25wDhIW7AA72LOrJQOy8Wys7notFOO6pniYGECwAaxh-wq_uZyEiTV7kLycmNZQdbWnVzHqYhbEvCfzVjgE3qLc6QqMHcBcOS7Gx90Qmb6IX9DGIozexeYf0j7SNZTpNpxIGyAiT6BdO62aMEta9aMRkywCvOaeOSZw-sjQGnnAg1fpxc1bMGA-qw3NmD0CuMQd5AroWx0b4AgU3LryemNsGTYElX73Q2ijvIMsZ4iDSne7A",
-    "prepTimeMin": 10,
-    "available": true,
-    "addOns": [],
-    "optionGroups": [],
-    "tags": ["Veg", "Nut-Free"]
-  },
-  {
-    "id": "dish_8",
-    "name": "Volcano Fries",
-    "category": "Starters",
-    "description": "Crispy fries loaded with spicy cheese sauce and jalapeños.",
-    "price": 350,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBj5TMH6v25wDhIW7AA72LOrJQOy8Wys7notFOO6pniYGECwAaxh-wq_uZyEiTV7kLycmNZQdbWnVzHqYhbEvCfzVjgE3qLc6QqMHcBcOS7Gx90Qmb6IX9DGIozexeYf0j7SNZTpNpxIGyAiT6BdO62aMEta9aMRkywCvOaeOSZw-sjQGnnAg1fpxc1bMGA-qw3NmD0CuMQd5AroWx0b4AgU3LryemNsGTYElX73Q2ijvIMsZ4iDSne7A",
-    "prepTimeMin": 8,
-    "available": true,
-    "stock": 2,
-    "addOns": [
-      { "id": "addon_vf1", "name": "Extra Cheese", "price": 60 }
-    ],
-    "optionGroups": [],
-    "tags": ["Veg", "Spicy"]
-  },
-  {
-    "id": "dish_9",
-    "name": "Truffle Fire Pizza",
-    "category": "Mains",
-    "description": "Wood-fired crust, black truffle paste, smoked mozzarella.",
-    "price": 1150,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBKVSuXOUEVj_HMzQtsqrL2T0EegBK15z3dNH1h1YgGTcHvMXrYHfZbVqpnjgmTbsS9BGhEoPzJe1S9f7gjPlgiSoFrHrdUOYcNWpV15to3q7hdWRyds9sMrAtgwt9eUWUK_HHs3_7Op-nqJHHdkdvAVegII9VZW1Z72r1s1gQr6DCf2Xzvt1cTsE8sQpcTcpH9w0vlR4JYyADmAyhYkrU-HVr1kPM_Gih-5XwSXyk-kmHSWnYozTIFZA",
-    "prepTimeMin": 25,
-    "available": false,
-    "addOns": [],
-    "optionGroups": [],
-    "tags": ["Veg", "Nut-Free"]
-  },
-  {
-    "id": "dish_10",
-    "name": "Smoked Caramel Cheesecake",
-    "category": "Desserts",
-    "description": "New York style cheesecake with smoked salted caramel.",
-    "price": 490,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC4PCuqPsfBxEHgKdJvnl2CYsl2oL9Z0cXzlFOSlNo_KJJLIer7S3eID7NHYZ-_LzBfaTO01huevjDBSDJKobDqzKf1DwBQzddoWR02ihlNwfsCCYLKAoDYDAQ0vWsRyJH07VoUNfi93I5O14mBupme3TXhFwrcDg4mVu55wOh2vkn3Bpcpkw1roOizYHZy3NDe9T396KmKSjXSYwmVGrJ3AI_C_IcUPWARjZCbgs84h3CahnK5riUshQ",
-    "prepTimeMin": 5,
-    "available": true,
-    "addOns": [],
-    "optionGroups": [],
-    "tags": ["Veg", "Nut-Free"]
-  },
-  {
-    "id": "dish_11",
-    "name": "Fiery Lemonade",
-    "category": "Drinks",
-    "description": "Classic lemonade infused with crushed red pepper.",
-    "price": 160,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCeU3Xpsc3fPVOr28widrrDvnOdFvJx0dDHOYUZ8WslIfD8WufKtWYabCLKEGtmYXNTkbUr2wkz4kBpOK26efxzln8qMmq91lvJkHDTjayzxsikdXBN4bmAsZPTjox2tCiOmdb_REv929FtRKY_OCKH2e_vGfgImVrJfacEiNfE6_ZMdI7TsEkppCgmkWyBLYUK3_YPWztlLG4V7rjw-LPnt2CyQSwiy2Tdmyr7aFCJSUD4SByURoEoqg",
-    "prepTimeMin": 5,
-    "available": true,
-    "addOns": [],
-    "optionGroups": [],
-    "tags": ["Veg", "Spicy", "Dairy-Free"]
-  },
-  {
-    "id": "dish_12",
-    "name": "Habanero Grilled Shrimp",
-    "category": "Starters",
-    "description": "Char-grilled shrimp skewers with a habanero mango glaze.",
-    "price": 720,
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBj5TMH6v25wDhIW7AA72LOrJQOy8Wys7notFOO6pniYGECwAaxh-wq_uZyEiTV7kLycmNZQdbWnVzHqYhbEvCfzVjgE3qLc6QqMHcBcOS7Gx90Qmb6IX9DGIozexeYf0j7SNZTpNpxIGyAiT6BdO62aMEta9aMRkywCvOaeOSZw-sjQGnnAg1fpxc1bMGA-qw3NmD0CuMQd5AroWx0b4AgU3LryemNsGTYElX73Q2ijvIMsZ4iDSne7A",
-    "prepTimeMin": 15,
-    "available": true,
-    "addOns": [],
-    "optionGroups": [],
-    "tags": ["Spicy", "Dairy-Free"]
-  }
-]
+{
+  "dishes": [
+    {
+      "id": "d1",
+      "name": "Fire Wings",
+      "category": "Starters",
+      "description": "Crispy chicken wings tossed in our signature blazing hot sauce.",
+      "price": 850,
+      "image": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 15,
+      "available": true,
+      "tags": [
+        "Spicy",
+        "Nut-Free"
+      ],
+      "addOns": [
+        {
+          "id": "a1",
+          "name": "Extra Ranch",
+          "price": 100
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "g1",
+          "name": "Heat Level",
+          "choices": [
+            {
+              "id": "c1",
+              "name": "Mild",
+              "price": 0
+            },
+            {
+              "id": "c2",
+              "name": "Medium",
+              "price": 0
+            },
+            {
+              "id": "c3",
+              "name": "Inferno",
+              "price": 50
+            }
+          ]
+        }
+      ],
+      "stock": 20
+    },
+    {
+      "id": "d2",
+      "name": "Volcano Burger",
+      "category": "Mains",
+      "description": "Double beef patty with melted pepper jack cheese, jalapeños, and magma sauce.",
+      "price": 1450,
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 20,
+      "available": true,
+      "tags": [
+        "Spicy"
+      ],
+      "addOns": [
+        {
+          "id": "a2",
+          "name": "Extra Patty",
+          "price": 400
+        }
+      ],
+      "optionGroups": [
+        {
+          "id": "g2",
+          "name": "Side",
+          "choices": [
+            {
+              "id": "c4",
+              "name": "Fries",
+              "price": 0
+            },
+            {
+              "id": "c5",
+              "name": "Onion Rings",
+              "price": 150
+            }
+          ]
+        }
+      ],
+      "stock": 15
+    },
+    {
+      "id": "d3",
+      "name": "Lava Cake",
+      "category": "Desserts",
+      "description": "Warm chocolate cake with a molten chocolate center and vanilla bean ice cream.",
+      "price": 650,
+      "image": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 10,
+      "available": true,
+      "tags": [
+        "Veg"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 30
+    },
+    {
+      "id": "d4",
+      "name": "Smoky Ribs",
+      "category": "Mains",
+      "description": "Slow-cooked BBQ ribs glazed in our secret smoky sauce. Falls right off the bone.",
+      "price": 2800,
+      "image": "https://images.unsplash.com/photo-1544025162-831154cbb291?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 25,
+      "available": true,
+      "tags": [
+        "Nut-Free"
+      ],
+      "addOns": [
+        {
+          "id": "a3",
+          "name": "Extra BBQ Sauce",
+          "price": 100
+        }
+      ],
+      "optionGroups": [],
+      "stock": 10
+    },
+    {
+      "id": "d5",
+      "name": "Blaze Lemonade",
+      "category": "Drinks",
+      "description": "Freshly squeezed lemonade with a hint of chili and mint for a fiery kick.",
+      "price": 350,
+      "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 5,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Dairy-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [
+        {
+          "id": "g3",
+          "name": "Size",
+          "choices": [
+            {
+              "id": "c6",
+              "name": "Regular",
+              "price": 0
+            },
+            {
+              "id": "c7",
+              "name": "Large",
+              "price": 100
+            }
+          ]
+        }
+      ],
+      "stock": 50
+    },
+    {
+      "id": "d6",
+      "name": "Inferno Nachos",
+      "category": "Starters",
+      "description": "Tortilla chips smothered in liquid cheese, jalapeños, black beans, and salsa.",
+      "price": 950,
+      "image": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 12,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Spicy"
+      ],
+      "addOns": [
+        {
+          "id": "a4",
+          "name": "Add Chicken",
+          "price": 300
+        }
+      ],
+      "optionGroups": [],
+      "stock": 25
+    },
+    {
+      "id": "d7",
+      "name": "Ember Steak",
+      "category": "Mains",
+      "description": "Premium cut steak grilled over an open flame, served with roasted veggies.",
+      "price": 4500,
+      "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 30,
+      "available": true,
+      "tags": [
+        "Gluten-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [
+        {
+          "id": "g4",
+          "name": "Doneness",
+          "choices": [
+            {
+              "id": "c8",
+              "name": "Medium Rare",
+              "price": 0
+            },
+            {
+              "id": "c9",
+              "name": "Medium",
+              "price": 0
+            },
+            {
+              "id": "c10",
+              "name": "Well Done",
+              "price": 0
+            }
+          ]
+        }
+      ],
+      "stock": 5
+    },
+    {
+      "id": "d8",
+      "name": "Charred Corn",
+      "category": "Starters",
+      "description": "Sweet corn grilled to perfection, topped with cotija cheese and paprika.",
+      "price": 550,
+      "image": "https://images.unsplash.com/photo-1596649282305-6ddc59d9a0d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 10,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Gluten-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 40
+    },
+    {
+      "id": "d9",
+      "name": "Sizzling Brownie",
+      "category": "Desserts",
+      "description": "Hot chocolate brownie served on a sizzler plate with a scoop of vanilla ice cream.",
+      "price": 850,
+      "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 15,
+      "available": true,
+      "tags": [
+        "Veg"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 20
+    },
+    {
+      "id": "d10",
+      "name": "Dragon Mojito",
+      "category": "Drinks",
+      "description": "A refreshing mix of mint, lime, and a splash of dragonfruit syrup.",
+      "price": 450,
+      "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 5,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Dairy-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 60
+    },
+    {
+      "id": "d11",
+      "name": "Spitfire Tacos",
+      "category": "Mains",
+      "description": "Three soft tacos filled with spicy pulled pork, slaw, and cilantro.",
+      "price": 1250,
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 15,
+      "available": true,
+      "tags": [
+        "Spicy",
+        "Dairy-Free"
+      ],
+      "addOns": [
+        {
+          "id": "a5",
+          "name": "Extra Taco",
+          "price": 400
+        }
+      ],
+      "optionGroups": [],
+      "stock": 18
+    },
+    {
+      "id": "d12",
+      "name": "Crispy Calamari",
+      "category": "Starters",
+      "description": "Lightly battered squid rings fried to golden perfection, served with garlic aioli.",
+      "price": 1150,
+      "image": "https://images.unsplash.com/photo-1599388856637-6415f36e4f3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 12,
+      "available": false,
+      "tags": [
+        "Nut-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 0
+    },
+    {
+      "id": "d13",
+      "name": "Phoenix Pizza",
+      "category": "Mains",
+      "description": "Wood-fired pizza topped with pepperoni, spicy sausage, and crushed red pepper.",
+      "price": 1850,
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 20,
+      "available": true,
+      "tags": [
+        "Spicy"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 12
+    },
+    {
+      "id": "d14",
+      "name": "Mango Chili Shake",
+      "category": "Drinks",
+      "description": "Sweet mango milkshake blended with a dash of chili powder for an exciting twist.",
+      "price": 500,
+      "image": "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 5,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Gluten-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 35
+    },
+    {
+      "id": "d15",
+      "name": "Ash Roasted Potatoes",
+      "category": "Starters",
+      "description": "Baby potatoes roasted in campfire ash, tossed in herbs and butter.",
+      "price": 650,
+      "image": "https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 20,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Gluten-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 45
+    },
+    {
+      "id": "d16",
+      "name": "Scorching Mac & Cheese",
+      "category": "Mains",
+      "description": "Creamy mac and cheese baked with a spicy breadcrumb crust.",
+      "price": 1100,
+      "image": "https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 18,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Spicy"
+      ],
+      "addOns": [
+        {
+          "id": "a6",
+          "name": "Add Bacon",
+          "price": 250
+        }
+      ],
+      "optionGroups": [],
+      "stock": 22
+    },
+    {
+      "id": "d17",
+      "name": "Fireball Truffles",
+      "category": "Desserts",
+      "description": "Dark chocolate truffles infused with cinnamon and chili, rolled in cocoa powder.",
+      "price": 750,
+      "image": "https://images.unsplash.com/photo-1614088685112-0a760b71a3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 5,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Gluten-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 25
+    },
+    {
+      "id": "d18",
+      "name": "Sparking Water",
+      "category": "Drinks",
+      "description": "Premium carbonated water served with a slice of lime.",
+      "price": 250,
+      "image": "https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 2,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Dairy-Free",
+        "Gluten-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 100
+    },
+    {
+      "id": "d19",
+      "name": "Smoldering Salmon",
+      "category": "Mains",
+      "description": "Pan-seared salmon fillet served on a bed of quinoa with a citrus glaze.",
+      "price": 2950,
+      "image": "https://images.unsplash.com/photo-1485921325833-c519f76c4927?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 22,
+      "available": true,
+      "tags": [
+        "Gluten-Free",
+        "Nut-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 8
+    },
+    {
+      "id": "d20",
+      "name": "Flame Grilled Veggies",
+      "category": "Starters",
+      "description": "Seasonal vegetables tossed in olive oil and grilled over charcoal.",
+      "price": 700,
+      "image": "https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 15,
+      "available": true,
+      "tags": [
+        "Veg",
+        "Dairy-Free",
+        "Gluten-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 30
+    },
+    {
+      "id": "d21",
+      "name": "Roasted Marshmallow Shake",
+      "category": "Desserts",
+      "description": "Vanilla milkshake blended with toasted marshmallows and graham crackers.",
+      "price": 650,
+      "image": "https://images.unsplash.com/photo-1572490122747-3968b75bf699?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 8,
+      "available": true,
+      "tags": [
+        "Veg"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 15
+    },
+    {
+      "id": "d22",
+      "name": "Torch Wrap",
+      "category": "Mains",
+      "description": "Spicy grilled chicken wrapped in a warm tortilla with fresh veggies and fire sauce.",
+      "price": 1350,
+      "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      "prepTimeMin": 12,
+      "available": true,
+      "tags": [
+        "Spicy",
+        "Nut-Free"
+      ],
+      "addOns": [],
+      "optionGroups": [],
+      "stock": 20
+    }
+  ]
+}

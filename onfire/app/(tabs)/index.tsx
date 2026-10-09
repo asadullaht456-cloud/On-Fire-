@@ -13,7 +13,7 @@ export default function MenuScreen() {
   const theme = useTheme();
   const router = useRouter();
   
-  const { user, logout } = useAuthStore();
+  const { currentUser, logout } = useAuthStore();
   const { 
     categories, selectedCategory, setCategory, 
     searchQuery, setSearch, 
@@ -52,17 +52,6 @@ export default function MenuScreen() {
 
   const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: theme.background },
-    header: {
-      paddingTop: Platform.OS === 'ios' ? 60 : 40,
-      paddingHorizontal: 16,
-      paddingBottom: 16,
-      backgroundColor: theme.background,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    },
-    brandTitle: { fontFamily: 'SpaceGrotesk-Bold', fontSize: 24, color: theme.secondary, textTransform: 'uppercase' },
-    tagline: { fontFamily: 'Caveat-SemiBold', fontSize: 20, color: theme.accent, marginTop: -4 },
     searchContainer: { marginHorizontal: 16, marginBottom: 16, flexDirection: 'row', alignItems: 'center', gap: 12 },
     searchInputWrapper: { flex: 1, position: 'relative' },
     searchInput: {
@@ -130,7 +119,7 @@ export default function MenuScreen() {
     },
     dishImage: { width: '100%', height: 200, backgroundColor: theme.surfaceAlt },
     unavailableOverlay: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       backgroundColor: 'rgba(0,0,0,0.5)',
       justifyContent: 'center', alignItems: 'center', zIndex: 10,
     },
@@ -148,17 +137,7 @@ export default function MenuScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.brandTitle}>On Fire</Text>
-          <Text style={styles.tagline}>Taste the heat</Text>
-        </View>
-        <TouchableOpacity onPress={logout} style={{ padding: 8, backgroundColor: theme.surfaceAlt, borderRadius: 20 }}>
-          <MaterialIcons name="logout" size={20} color={theme.textPrimary} />
-        </TouchableOpacity>
-      </View>
-
-      <ScrollView stickyHeaderIndices={[1]} showsVerticalScrollIndicator={false}>
+      <ScrollView stickyHeaderIndices={[0]} showsVerticalScrollIndicator={false}>
         <View>
           <View style={styles.searchContainer}>
             <View style={styles.searchInputWrapper}>
@@ -279,11 +258,6 @@ export default function MenuScreen() {
                     <View style={{ backgroundColor: theme.danger, paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20 }}>
                       <Text style={{ color: '#FFF', fontFamily: 'SpaceGrotesk-SemiBold', fontSize: 14, textTransform: 'uppercase' }}>Unavailable</Text>
                     </View>
-                  </View>
-                )}
-                {dish.available && dish.stock !== undefined && (
-                  <View style={{ position: 'absolute', top: 12, left: 12, backgroundColor: 'rgba(0,0,0,0.8)', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 12, borderWidth: 1, borderColor: theme.accent }}>
-                    <Text style={{ color: theme.accent, fontFamily: 'SpaceGrotesk-SemiBold', fontSize: 12 }}>Only {dish.stock} left</Text>
                   </View>
                 )}
               </View>

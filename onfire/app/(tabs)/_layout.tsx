@@ -3,6 +3,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useTheme } from '../../theme/useTheme';
 import { useCartStore } from '../../store/cartStore';
 import { View, Text } from 'react-native';
+import { Header } from '../../components/Header';
 
 export default function TabLayout() {
   const theme = useTheme();
@@ -11,7 +12,10 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        header: ({ route, options }) => {
+          if (route.name === 'index') return <Header />;
+          return <Header title={options.title} />;
+        },
         tabBarStyle: {
           backgroundColor: theme.background,
           borderTopColor: theme.border,
@@ -64,10 +68,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="kitchen"
+        name="tracking"
         options={{
-          title: 'Kitchen',
-          tabBarIcon: ({ color }) => <MaterialIcons name="local-fire-department" size={24} color={color} />,
+          title: 'Tracking',
+          tabBarIcon: ({ color }) => <MaterialIcons name="delivery-dining" size={24} color={color} />,
         }}
       />
     </Tabs>

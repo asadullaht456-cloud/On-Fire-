@@ -1,7 +1,6 @@
-import * as FileSystem from 'expo-file-system';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Crypto from 'expo-crypto';
 
-// Use require to get the bundled initial data
 const initialUsers = require('../data/users.json');
 
 export interface User {
@@ -12,23 +11,20 @@ export interface User {
   createdAt: number;
 }
 
-const USERS_FILE_URI = FileSystem.documentDirectory + 'users.json';
+const USERS_STORAGE_KEY = 'onfire_users';
 
 export const authService = {
   async loadUsers(): Promise<User[]> {
     try {
-      const fileInfo = await FileSystem.getInfoAsync(USERS_FILE_URI);
-      if (fileInfo.exists) {
-        const content = await FileSystem.readAsStringAsync(USERS_FILE_URI);
-        return JSON.parse(content);
+      const stored = await AsyncStorage.getItem(USERS_STORAGE_KEY);
+      if (stored) {
+        return JSON.parse(stored);
       }
-      
-      // If file doesn't exist, seed it with initial data
-      await FileSystem.writeAsStringAsync(USERS_FILE_URI, JSON.stringify(initialUsers));
+      await AsyncStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(initialUsers));
       return initialUsers;
     } catch (error) {
       console.error('Error loading users:', error);
-      return initialUsers; // Fallback to initial if FS fails
+      return initialUsers;
     }
   },
 
@@ -36,7 +32,7 @@ export const authService = {
     try {
       const users = await this.loadUsers();
       users.push(user);
-      await FileSystem.writeAsStringAsync(USERS_FILE_URI, JSON.stringify(users));
+      await AsyncStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
     } catch (error) {
       console.error('Error saving user:', error);
       throw error;

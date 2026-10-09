@@ -24,11 +24,11 @@ export default function DishDetailsScreen() {
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
   const [note, setNote] = useState('');
   const [quantity, setQuantity] = useState(1);
-  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    if (dish && lineId) {
-      const existingItem = cartItems.find(i => i.lineId === lineId);
+    const singleLineId = Array.isArray(lineId) ? lineId[0] : lineId;
+    if (dish && singleLineId) {
+      const existingItem = cartItems.find(i => i.lineId === singleLineId);
       if (existingItem) {
         setSelectedAddOns(existingItem.customization.addOnIds);
         setSelectedOptions(existingItem.customization.options);
@@ -38,13 +38,9 @@ export default function DishDetailsScreen() {
     }
   }, [dish, lineId, cartItems]);
 
-  useEffect(() => {
-    if (dish) {
-      const custom: Customization = { addOnIds: selectedAddOns, options: selectedOptions, note };
-      const unitPrice = calcUnitPrice(dish, custom);
-      setTotalPrice(unitPrice * quantity);
-    }
-  }, [selectedAddOns, selectedOptions, quantity, dish, note]);
+  const custom: Customization = { addOnIds: selectedAddOns, options: selectedOptions, note };
+  const unitPrice = dish ? calcUnitPrice(dish, custom) : 0;
+  const totalPrice = unitPrice * quantity;
 
   if (!dish) {
     return (
@@ -76,9 +72,9 @@ export default function DishDetailsScreen() {
   const handleSave = () => {
     if (!canAddToCart) return;
     
-    const custom: Customization = { addOnIds: selectedAddOns, options: selectedOptions, note };
-    if (lineId) {
-      updateCustomization(lineId as string, dish, custom);
+    const singleLineId = Array.isArray(lineId) ? lineId[0] : lineId;
+    if (singleLineId) {
+      updateCustomization(singleLineId, dish, custom);
       if (Platform.OS === 'android') ToastAndroid.show('Cart updated', ToastAndroid.SHORT);
     } else {
       addItem(dish, custom, quantity);
@@ -92,7 +88,7 @@ export default function DishDetailsScreen() {
     imageContainer: { width: '100%', height: 350, backgroundColor: theme.surfaceAlt, position: 'relative' },
     image: { width: '100%', height: '100%', resizeMode: 'cover' },
     gradient: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill as any,
       backgroundColor: 'rgba(11,11,11,0.6)',
       top: '50%',
     },

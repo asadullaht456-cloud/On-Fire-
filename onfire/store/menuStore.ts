@@ -5,6 +5,8 @@ import menuData from '../data/menu.json';
 interface MenuState {
   dishes: Dish[];
   categories: Category[];
+  searchQuery: string;
+  selectedCategory: Category | 'All';
   selectedTags: DietTag[];
   showAvailableOnly: boolean;
   sortBy: 'none' | 'price_asc' | 'price_desc' | 'prep_time';
@@ -24,9 +26,10 @@ interface MenuState {
 }
 
 export const useMenuStore = create<MenuState>()((set, get) => ({
-  dishes: menuData as Dish[],
+  dishes: menuData.dishes as Dish[],
   categories: ['Starters', 'Mains', 'Desserts', 'Drinks'],
   searchQuery: '',
+  selectedCategory: 'All',
   selectedTags: [],
   showAvailableOnly: false,
   sortBy: 'none',
