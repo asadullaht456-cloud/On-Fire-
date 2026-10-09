@@ -3,7 +3,6 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Order, OrderStatus, DishStatus, DineInRequest } from '../types';
 import * as Haptics from 'expo-haptics';
-import * as Notifications from 'expo-notifications';
 
 interface OrderState {
   orders: Order[];
@@ -62,16 +61,6 @@ export const useOrderStore = create<OrderState>()(
           
           const newStatus = STATUS_FLOW[nextIndex];
           
-          if (newStatus === 'Ready') {
-            Notifications.scheduleNotificationAsync({
-              content: {
-                title: 'Order Ready!',
-                body: `Your order ${order.id} is ready for pickup.`,
-              },
-              trigger: null,
-            }).catch(() => {});
-          }
-          
           Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
           
           return {
@@ -109,12 +98,28 @@ export const useOrderStore = create<OrderState>()(
         orders: state.orders.map(o => o.id === orderId ? { ...o, delayMinutes: o.delayMinutes + minutes } : o)
       })),
 
-      setItemProgress: (orderId, lineId, status) => set((state) => ({
-        orders: state.orders.map(o => o.id === orderId ? {
-          ...o, 
-          itemProgress: { ...o.itemProgress, [lineId]: status }
-        } : o)
-      })),
+      setItemProgress: (orderId, lineId, status) => set((state) => {
+        return {
+          orders: state.orders.map(o => {
+            if (o.id !== orderId) return o;
+            
+            const itemProgress = { ...o.itemProgress, [lineId]: status };
+            const allReady = Object.values(itemProgress).every(s => s === 'Ready');
+            
+            let newStatus = o.status;
+            if (allReady && (o.status === 'Placed' || o.status === 'Accepted' || o.status === 'Preparing')) {
+              newStatus = 'Ready';
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+            }
+            
+            return {
+              ...o, 
+              itemProgress,
+              status: newStatus
+            };
+          })
+        };
+      }),
 
       addDineInRequest: (orderId, type) => set((state) => {
         const order = state.orders.find(o => o.id === orderId);

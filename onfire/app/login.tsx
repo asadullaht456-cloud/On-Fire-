@@ -3,17 +3,49 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingVi
 import { useRouter } from 'expo-router';
 import { useAuthStore } from '../store/authStore';
 import { useTheme } from '../theme/useTheme';
+import { authService } from '../utils/authService';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const login = useAuthStore(state => state.login);
+  const setCurrentUser = useAuthStore(state => state.setCurrentUser);
   const theme = useTheme();
 
-  const handleLogin = () => {
-    if (email && password) {
-      login(email);
+  const handleLogin = async () => {
+    if (!email || !password) {
+      setError('Please enter both email and password.');
+      return;
+    }
+    
+    setError('');
+    setLoading(true);
+    
+    try {
+      const users = await authService.loadUsers();
+      const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+      
+      if (!user) {
+        setError('Unknown email or incorrect password.');
+        setLoading(false);
+        return;
+      }
+      
+      const hashedAttempt = await authService.hashPassword(password);
+      if (user.passwordHash !== hashedAttempt) {
+        setError('Unknown email or incorrect password.');
+        setLoading(false);
+        return;
+      }
+      
+      setCurrentUser(user);
+      // The _layout will automatically redirect because isAuthenticated changed
+    } catch (err) {
+      setError('An error occurred during login.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -66,8 +98,10 @@ export default function LoginScreen() {
         secureTextEntry
       />
       
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Sign In</Text>
+      {error ? <Text style={{ color: theme.danger, fontFamily: 'Inter-Regular', marginBottom: 16, textAlign: 'center' }}>{error}</Text> : null}
+      
+      <TouchableOpacity style={styles.button} onPress={handleLogin} disabled={loading}>
+        <Text style={styles.buttonText}>{loading ? 'Signing in...' : 'Sign In'}</Text>
       </TouchableOpacity>
       
       <TouchableOpacity onPress={() => router.push('/signup')}>

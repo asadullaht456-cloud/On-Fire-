@@ -1,0 +1,16 @@
+[
+  {
+    "id": "u1",
+    "name": "Demo User",
+    "email": "test@example.com",
+    "passwordHash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "createdAt": 1704067200000
+  },
+  {
+    "id": "u2",
+    "name": "Admin User",
+    "email": "admin@onfire.com",
+    "passwordHash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "createdAt": 1704067200000
+  }
+]

@@ -131,7 +131,7 @@ export default function CartScreen() {
                 <View style={styles.itemActions}>
                   <TouchableOpacity 
                     style={styles.editBtn} 
-                    onPress={() => router.push(`/customize/${item.dishId}?lineId=${item.lineId}`)}
+                    onPress={() => router.push(`/dish/${item.dishId}?lineId=${item.lineId}`)}
                   >
                     <MaterialIcons name="edit" size={16} color={theme.primary} />
                     <Text style={styles.editBtnText}>Edit</Text>

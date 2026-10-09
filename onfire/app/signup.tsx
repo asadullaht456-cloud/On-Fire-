@@ -3,18 +3,61 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingVi
 import { useRouter } from 'expo-router';
 import { useAuthStore } from '../store/authStore';
 import { useTheme } from '../theme/useTheme';
+import { authService, User } from '../utils/authService';
 
 export default function SignupScreen() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const login = useAuthStore(state => state.login);
+  const setCurrentUser = useAuthStore(state => state.setCurrentUser);
   const theme = useTheme();
 
-  const handleSignup = () => {
-    if (name && email && password) {
-      login(email);
+  const handleSignup = async () => {
+    if (!name.trim() || !email.trim() || !password) {
+      setError('Please fill in all fields.');
+      return;
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+    
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters.');
+      return;
+    }
+    
+    setError('');
+    setLoading(true);
+    
+    try {
+      const users = await authService.loadUsers();
+      if (users.some(u => u.email.toLowerCase() === email.toLowerCase())) {
+        setError('An account with this email already exists.');
+        setLoading(false);
+        return;
+      }
+      
+      const passwordHash = await authService.hashPassword(password);
+      const newUser: User = {
+        id: 'u_' + Date.now() + Math.random().toString(36).substring(2, 9),
+        name: name.trim(),
+        email: email.trim().toLowerCase(),
+        passwordHash,
+        createdAt: Date.now()
+      };
+      
+      await authService.saveUser(newUser);
+      setCurrentUser(newUser);
+    } catch (err) {
+      setError('An error occurred during sign up.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,8 +117,10 @@ export default function SignupScreen() {
         secureTextEntry
       />
       
-      <TouchableOpacity style={styles.button} onPress={handleSignup}>
-        <Text style={styles.buttonText}>Sign Up</Text>
+      {error ? <Text style={{ color: theme.danger, fontFamily: 'Inter-Regular', marginBottom: 16, textAlign: 'center' }}>{error}</Text> : null}
+      
+      <TouchableOpacity style={styles.button} onPress={handleSignup} disabled={loading}>
+        <Text style={styles.buttonText}>{loading ? 'Signing up...' : 'Sign Up'}</Text>
       </TouchableOpacity>
       
       <TouchableOpacity onPress={() => router.replace('/login')}>
