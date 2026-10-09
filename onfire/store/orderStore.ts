@@ -2,6 +2,8 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Order, OrderStatus, DishStatus, DineInRequest } from '../types';
+import * as Haptics from 'expo-haptics';
+import * as Notifications from 'expo-notifications';
 
 interface OrderState {
   orders: Order[];
@@ -25,7 +27,7 @@ const STATUS_FLOW: OrderStatus[] = ['Placed', 'Accepted', 'Preparing', 'Ready', 
 export const useOrderStore = create<OrderState>()(
   persist(
     (set, get) => ({
-      orders: [],
+      orders: [] as Order[],
 
       placeOrder: (items, subtotal, charges, total, appliedCoupon, reorderedFrom) => {
         const id = `ORD-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
@@ -46,18 +48,37 @@ export const useOrderStore = create<OrderState>()(
         };
 
         set((state) => ({ orders: [newOrder, ...state.orders] }));
+        
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
         return id;
       },
 
-      advanceStatus: (orderId) => set((state) => {
-        const order = state.orders.find(o => o.id === orderId);
-        if (!order || order.status === 'Completed' || order.status === 'Cancelled') return state;
-        const nextIndex = STATUS_FLOW.indexOf(order.status) + 1;
-        if (nextIndex >= STATUS_FLOW.length) return state;
-        return {
-          orders: state.orders.map(o => o.id === orderId ? { ...o, status: STATUS_FLOW[nextIndex] } : o)
-        };
-      }),
+      advanceStatus: (orderId) => {
+        set((state) => {
+          const order = state.orders.find(o => o.id === orderId);
+          if (!order || order.status === 'Completed' || order.status === 'Cancelled') return state;
+          const nextIndex = STATUS_FLOW.indexOf(order.status) + 1;
+          if (nextIndex >= STATUS_FLOW.length) return state;
+          
+          const newStatus = STATUS_FLOW[nextIndex];
+          
+          if (newStatus === 'Ready') {
+            Notifications.scheduleNotificationAsync({
+              content: {
+                title: 'Order Ready!',
+                body: `Your order ${order.id} is ready for pickup.`,
+              },
+              trigger: null,
+            }).catch(() => {});
+          }
+          
+          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium).catch(() => {});
+          
+          return {
+            orders: state.orders.map(o => o.id === orderId ? { ...o, status: newStatus } : o)
+          };
+        });
+      },
 
       getOrderById: (id) => get().orders.find(o => o.id === id),
 

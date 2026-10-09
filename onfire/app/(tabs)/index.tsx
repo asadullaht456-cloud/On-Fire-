@@ -67,7 +67,7 @@ export default function MenuScreen() {
     },
     dishImage: { width: '100%', height: 200, backgroundColor: theme.surfaceAlt },
     unavailableOverlay: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       backgroundColor: 'rgba(0,0,0,0.5)',
       justifyContent: 'center', alignItems: 'center', zIndex: 10,
     },

@@ -30,7 +30,7 @@ export default function DishDetailsScreen() {
     imageContainer: { width: '100%', height: 350, backgroundColor: theme.surfaceAlt, position: 'relative' },
     image: { width: '100%', height: '100%', resizeMode: 'cover' },
     gradient: {
-      ...StyleSheet.absoluteFillObject,
+      ...StyleSheet.absoluteFill,
       backgroundColor: 'rgba(11,11,11,0.6)',
       top: '50%',
     },
@@ -83,12 +83,12 @@ export default function DishDetailsScreen() {
 
           <View style={styles.tagsTopLeft}>
             <View style={styles.badge}>
-              <MaterialIcons name="timer" size={14} color={theme.tertiary} />
+              <MaterialIcons name="timer" size={14} color={theme.accent} />
               <Text style={styles.badgeText}>{dish.prepTimeMin}m</Text>
             </View>
             <View style={styles.badge}>
-              <MaterialIcons name="star" size={14} color={theme.tertiary} />
-              <Text style={[styles.badgeText, { color: theme.tertiary }]}>4.8</Text>
+              <MaterialIcons name="star" size={14} color={theme.accent} />
+              <Text style={[styles.badgeText, { color: theme.accent }]}>4.8</Text>
             </View>
           </View>
         </View>

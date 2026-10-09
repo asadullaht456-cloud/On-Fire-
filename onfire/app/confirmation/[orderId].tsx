@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
-import { useTheme } from '../../../theme/useTheme';
-import { useOrderStore } from '../../../store/orderStore';
-import { formatRs } from '../../../utils/price';
+import { useTheme } from '../../theme/useTheme';
+import { useOrderStore } from '../../store/orderStore';
+import { formatRs } from '../../utils/price';
 
 export default function ConfirmationScreen() {
   const { orderId } = useLocalSearchParams();

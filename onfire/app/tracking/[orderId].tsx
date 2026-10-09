@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
-import { useTheme } from '../../../theme/useTheme';
-import { useOrderStore } from '../../../store/orderStore';
-import { OrderStatus } from '../../../types';
+import { useTheme } from '../../theme/useTheme';
+import { useOrderStore } from '../../store/orderStore';
+import { OrderStatus } from '../../types';
 
 const STATUS_FLOW: OrderStatus[] = ['Placed', 'Accepted', 'Preparing', 'Ready', 'Completed'];
 

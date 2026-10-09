@@ -18,7 +18,7 @@ interface MenuState {
   restoreStock: (dishId: string, qty: number) => void;
 }
 
-export const useMenuStore = create<MenuState>((set, get) => ({
+export const useMenuStore = create<MenuState>()((set, get) => ({
   dishes: menuData as Dish[],
   categories: ['Starters', 'Mains', 'Desserts', 'Drinks'],
   searchQuery: '',

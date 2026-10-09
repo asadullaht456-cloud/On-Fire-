@@ -2,15 +2,17 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
-import { useTheme } from '../../../theme/useTheme';
-import { useOrderStore } from '../../../store/orderStore';
-import { formatRs } from '../../../utils/price';
+import { useTheme } from '../../theme/useTheme';
+import { useOrderStore } from '../../store/orderStore';
+import { useCartStore } from '../../store/cartStore';
+import { formatRs } from '../../utils/price';
 
 export default function OrderDetailsScreen() {
   const { orderId } = useLocalSearchParams();
   const router = useRouter();
   const theme = useTheme();
   const getOrderById = useOrderStore(state => state.getOrderById);
+  const reorder = useCartStore(state => state.reorder);
   const order = getOrderById(orderId as string);
 
   if (!order) return null;
@@ -103,7 +105,13 @@ export default function OrderDetailsScreen() {
         {order.status === 'Completed' && (
           <TouchableOpacity 
             style={styles.reorderBtn} 
-            onPress={() => {}}
+            onPress={() => {
+              const result = reorder(order);
+              if (result.skipped.length > 0) {
+                alert(`${result.skipped.length} items were unavailable and skipped.`);
+              }
+              router.push('/(tabs)/cart');
+            }}
           >
             <Text style={styles.reorderBtnText}>Reorder</Text>
           </TouchableOpacity>
